@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aishwarya’s Skincare Tracker 🌸</title>
+  <title>Aishwarya’s Monthly Skincare Tracker 🌸</title>
   <style>
     body {
       font-family: "Poppins", sans-serif;
@@ -16,7 +16,7 @@
     h1 {
       text-align: center;
       color: #ff7eb9;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     p {
@@ -28,7 +28,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 30px;
+      margin-top: 25px;
       background: #fff;
       border-radius: 20px;
       overflow: hidden;
@@ -36,14 +36,13 @@
     }
 
     th, td {
-      padding: 15px;
+      padding: 12px;
       text-align: center;
     }
 
     th {
       background-color: #ffd6e0;
       color: #333;
-      font-size: 1.1em;
     }
 
     tr:nth-child(even) {
@@ -62,108 +61,102 @@
       color: #777;
     }
 
-    .add-ons {
-      margin-top: 40px;
-      background: #fff;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    .add-ons h2 {
-      text-align: center;
-      color: #a864f0;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      padding: 8px 0;
-      font-size: 1em;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    ul li::before {
-      content: "💖";
-    }
-
     footer {
       text-align: center;
-      margin-top: 30px;
+      margin-top: 40px;
       color: #888;
       font-size: 0.9em;
+    }
+
+    .reset-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: #ffb3d9;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .reset-btn:hover {
+      background: #ff7eb9;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <h1>🌸 Aishwarya’s Weekly Skincare Tracker 🌸</h1>
-  <p>Tick each step after you complete it — glow consistency = glow skin ✨</p>
+  <h1>🌸 Aishwarya’s Monthly Skincare Tracker 🌸</h1>
+  <p>Tick your daily routine ✅ — auto-refresh every new month ✨</p>
 
-  <table>
+  <table id="skincareTable">
     <tr>
       <th>Day</th>
       <th>🌞 Morning Routine</th>
       <th>🌙 Night Routine</th>
-      <th>Notes</th>
-    </tr>
-    <tr>
-      <td>Monday</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Centella Tea Trica Serum<br><input type="checkbox"> Moisturizer</td>
-      <td class="notes">Calm & repair</td>
-    </tr>
-    <tr>
-      <td>Tuesday</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Salicylic Acid Serum<br><input type="checkbox"> Moisturizer</td>
-      <td class="notes">Deep pore cleanse</td>
-    </tr>
-    <tr>
-      <td>Wednesday</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Centella Tone Brightening Serum<br><input type="checkbox"> Moisturizer</td>
-      <td class="notes">Glow & fade marks</td>
-    </tr>
-    <tr>
-      <td>Thursday</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Tea Trica Serum<br><input type="checkbox"> Moisturizer</td>
-      <td class="notes">Calm & balance</td>
-    </tr>
-    <tr>
-      <td>Friday</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Salicylic Acid Serum<br><input type="checkbox"> Moisturizer</td>
-      <td class="notes">Exfoliate pores</td>
-    </tr>
-    <tr>
-      <td>Saturday</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Tone Brightening Serum<br><input type="checkbox"> Moisturizer</td>
-      <td class="notes">Brighten & even tone</td>
-    </tr>
-    <tr>
-      <td>Sunday</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
-      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Moisturizer</td>
-      <td class="notes">Skin rest day 💤</td>
     </tr>
   </table>
 
-  <div class="add-ons">
-    <h2>💆‍♀ Weekly Add-ons 💫</h2>
-    <ul>
-      <li>🪶 Clay Mask — 1–2× per week (deep cleanse pores)</li>
-      <li>🧊 Ice Massage — 2–3× per week (refresh & tighten)</li>
-      <li>💧 Drink 2.5–3L water daily 💦</li>
-    </ul>
-  </div>
+  <button class="reset-btn" id="resetData">🔄 Reset Tracker Manually</button>
 
-  <footer>Made with 💖 by Aishwarya | #GlowGoals ✨</footer>
+  <footer>Made with 💖 by Aishwarya | Auto-reset each month 🌷</footer>
+
+  <script>
+    const table = document.getElementById("skincareTable");
+    const currentMonth = new Date().getMonth();
+    const savedMonth = localStorage.getItem("monthTracker");
+
+    // 🧹 Auto-reset data at the start of a new month
+    if (savedMonth && parseInt(savedMonth) !== currentMonth) {
+      localStorage.clear();
+      localStorage.setItem("monthTracker", currentMonth);
+    } else if (!savedMonth) {
+      localStorage.setItem("monthTracker", currentMonth);
+    }
+
+    // 🗓 Generate 30 days dynamically
+    const totalDays = 30;
+    for (let day = 1; day <= totalDays; day++) {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>Day ${day}</td>
+        <td>
+          <label><input type="checkbox" id="morning-${day}-1"> Face Wash</label><br>
+          <label><input type="checkbox" id="morning-${day}-2"> Niacinamide</label><br>
+          <label><input type="checkbox" id="morning-${day}-3"> Moisturizer</label><br>
+          <label><input type="checkbox" id="morning-${day}-4"> SPF</label>
+        </td>
+        <td>
+          <label><input type="checkbox" id="night-${day}-1"> Face Wash</label><br>
+          <label><input type="checkbox" id="night-${day}-2"> Serum</label><br>
+          <label><input type="checkbox" id="night-${day}-3"> Moisturizer</label>
+        </td>
+      `;
+      table.appendChild(row);
+    }
+
+    // ✅ Save & load checkbox states
+    const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+    checkboxes.forEach((checkbox) => {
+      const id = checkbox.id;
+      const saved = localStorage.getItem(id);
+      if (saved === "true") checkbox.checked = true;
+
+      checkbox.addEventListener("change", () => {
+        localStorage.setItem(id, checkbox.checked);
+      });
+    });
+
+    // 🔁 Manual reset button
+    document.getElementById("resetData").addEventListener("click", () => {
+      if (confirm("Reset all checkmarks?")) {
+        localStorage.clear();
+        localStorage.setItem("monthTracker", currentMonth);
+        checkboxes.forEach((cb) => (cb.checked = false));
+      }
+    });
+  </script>
 </body>
 </html>
