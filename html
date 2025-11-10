@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aishwarya’s Skincare Tracker 🌸</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #e6f7ff, #f5e6ff);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff7eb9;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.1em;
+      color: #666;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #ffd6e0;
+      color: #333;
+      font-size: 1.1em;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fdf4ff;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #ff7eb9;
+      cursor: pointer;
+    }
+
+    .notes {
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    .add-ons {
+      margin-top: 40px;
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .add-ons h2 {
+      text-align: center;
+      color: #a864f0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 8px 0;
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    ul li::before {
+      content: "💖";
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #888;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 Aishwarya’s Weekly Skincare Tracker 🌸</h1>
+  <p>Tick each step after you complete it — glow consistency = glow skin ✨</p>
+
+  <table>
+    <tr>
+      <th>Day</th>
+      <th>🌞 Morning Routine</th>
+      <th>🌙 Night Routine</th>
+      <th>Notes</th>
+    </tr>
+    <tr>
+      <td>Monday</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Centella Tea Trica Serum<br><input type="checkbox"> Moisturizer</td>
+      <td class="notes">Calm & repair</td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Salicylic Acid Serum<br><input type="checkbox"> Moisturizer</td>
+      <td class="notes">Deep pore cleanse</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Centella Tone Brightening Serum<br><input type="checkbox"> Moisturizer</td>
+      <td class="notes">Glow & fade marks</td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Tea Trica Serum<br><input type="checkbox"> Moisturizer</td>
+      <td class="notes">Calm & balance</td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Salicylic Acid Serum<br><input type="checkbox"> Moisturizer</td>
+      <td class="notes">Exfoliate pores</td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Tone Brightening Serum<br><input type="checkbox"> Moisturizer</td>
+      <td class="notes">Brighten & even tone</td>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Niacinamide<br><input type="checkbox"> Moisturizer<br><input type="checkbox"> SPF</td>
+      <td><input type="checkbox"> Face Wash<br><input type="checkbox"> Moisturizer</td>
+      <td class="notes">Skin rest day 💤</td>
+    </tr>
+  </table>
+
+  <div class="add-ons">
+    <h2>💆‍♀ Weekly Add-ons 💫</h2>
+    <ul>
+      <li>🪶 Clay Mask — 1–2× per week (deep cleanse pores)</li>
+      <li>🧊 Ice Massage — 2–3× per week (refresh & tighten)</li>
+      <li>💧 Drink 2.5–3L water daily 💦</li>
+    </ul>
+  </div>
+
+  <footer>Made with 💖 by Aishwarya | #GlowGoals ✨</footer>
+</body>
+</html>
