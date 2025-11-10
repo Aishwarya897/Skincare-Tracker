@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aishwarya’s Monthly Skincare Tracker 🌸</title>
+  <title>My Monthly Skincare Tracker 🌸</title>
   <style>
     body {
       font-family: "Poppins", sans-serif;
@@ -36,8 +36,9 @@
     }
 
     th, td {
-      padding: 12px;
+      padding: 14px;
       text-align: center;
+      vertical-align: middle;
     }
 
     th {
@@ -49,6 +50,21 @@
       background-color: #fdf4ff;
     }
 
+    .routine-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95em;
+    }
+
     input[type="checkbox"] {
       width: 18px;
       height: 18px;
@@ -56,22 +72,10 @@
       cursor: pointer;
     }
 
-    .notes {
-      font-size: 0.9em;
-      color: #777;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: #888;
-      font-size: 0.9em;
-    }
-
     .reset-btn {
       display: block;
       margin: 20px auto;
-      padding: 10px 20px;
+      padding: 10px 25px;
       background: #ffb3d9;
       border: none;
       border-radius: 25px;
@@ -84,11 +88,18 @@
       background: #ff7eb9;
       color: white;
     }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #888;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
-  <h1>🌸 Aishwarya’s Monthly Skincare Tracker 🌸</h1>
-  <p>Tick your daily routine ✅ — auto-refresh every new month ✨</p>
+  <h1>🌸 My Monthly Skincare Tracker 🌸</h1>
+  <p>✨Be your Own Glow-Up Era✨</p>
 
   <table id="skincareTable">
     <tr>
@@ -98,7 +109,7 @@
     </tr>
   </table>
 
-  <button class="reset-btn" id="resetData">🔄 Reset Tracker Manually</button>
+  <button class="reset-btn" id="resetData">🔄 Reset Tracker</button>
 
   <footer>Made with 💖 by Aishwarya | Auto-reset each month 🌷</footer>
 
@@ -107,7 +118,7 @@
     const currentMonth = new Date().getMonth();
     const savedMonth = localStorage.getItem("monthTracker");
 
-    // 🧹 Auto-reset data at the start of a new month
+    // Auto-reset each new month
     if (savedMonth && parseInt(savedMonth) !== currentMonth) {
       localStorage.clear();
       localStorage.setItem("monthTracker", currentMonth);
@@ -115,41 +126,36 @@
       localStorage.setItem("monthTracker", currentMonth);
     }
 
-    // 🗓 Generate 30 days dynamically
     const totalDays = 30;
     for (let day = 1; day <= totalDays; day++) {
       const row = document.createElement("tr");
       row.innerHTML = `
         <td>Day ${day}</td>
-        <td>
-          <label><input type="checkbox" id="morning-${day}-1"> Face Wash</label><br>
-          <label><input type="checkbox" id="morning-${day}-2"> Niacinamide</label><br>
-          <label><input type="checkbox" id="morning-${day}-3"> Moisturizer</label><br>
+        <td class="routine-col">
+          <label><input type="checkbox" id="morning-${day}-1"> Face Wash</label>
+          <label><input type="checkbox" id="morning-${day}-2"> Niacinamide</label>
+          <label><input type="checkbox" id="morning-${day}-3"> Moisturizer</label>
           <label><input type="checkbox" id="morning-${day}-4"> SPF</label>
         </td>
-        <td>
-          <label><input type="checkbox" id="night-${day}-1"> Face Wash</label><br>
-          <label><input type="checkbox" id="night-${day}-2"> Serum</label><br>
+        <td class="routine-col">
+          <label><input type="checkbox" id="night-${day}-1"> Face Wash</label>
+          <label><input type="checkbox" id="night-${day}-2"> Serum</label>
           <label><input type="checkbox" id="night-${day}-3"> Moisturizer</label>
         </td>
       `;
       table.appendChild(row);
     }
 
-    // ✅ Save & load checkbox states
+    // Save/load checkbox states
     const checkboxes = document.querySelectorAll("input[type='checkbox']");
-
-    checkboxes.forEach((checkbox) => {
-      const id = checkbox.id;
+    checkboxes.forEach((cb) => {
+      const id = cb.id;
       const saved = localStorage.getItem(id);
-      if (saved === "true") checkbox.checked = true;
-
-      checkbox.addEventListener("change", () => {
-        localStorage.setItem(id, checkbox.checked);
-      });
+      if (saved === "true") cb.checked = true;
+      cb.addEventListener("change", () => localStorage.setItem(id, cb.checked));
     });
 
-    // 🔁 Manual reset button
+    // Manual reset
     document.getElementById("resetData").addEventListener("click", () => {
       if (confirm("Reset all checkmarks?")) {
         localStorage.clear();
